@@ -8,7 +8,6 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-builder.Services.AddOpenApi();
 
 // Add DbContext
 builder.Services.AddDbContext<ElearningDbContext>(options =>
@@ -121,7 +120,6 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
-    app.MapOpenApi();
 
     // Redirect root URL to Swagger UI
     app.MapGet("/", () => Results.Redirect("/swagger/index.html"));
@@ -137,3 +135,5 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
+public partial class Program { }
